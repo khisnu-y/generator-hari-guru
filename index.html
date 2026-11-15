@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17151c">
+<title>Hadiah Untuk Guruku | Digital Greeting Card</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold:#d5ad65;
+  --bg:#17151c;
+  --panel:#24212b;
+  --text:#f8f0df;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  font-family:'Poppins',sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%,#49382d 0,transparent 30%),
+    radial-gradient(circle at 90% 90%,#322d49 0,transparent 35%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+button,input,select,textarea {
+  font-family:inherit;
+}
+
+button {
+  cursor:pointer;
+  transition:.25s;
+}
+
+button:hover {
+  transform:translateY(-2px);
+  filter:brightness(1.12);
+}
+
+header {
+  text-align:center;
+  padding:35px 15px 25px;
+}
+
+.logo {
+  display:inline-block;
+  color:var(--gold);
+  border:1px solid #d5ad6570;
+  padding:7px 18px;
+  border-radius:30px;
+  font-size:10px;
+  letter-spacing:3px;
+  margin-bottom:15px;
+}
+
+header h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,5vw,45px);
+  font-weight:500;
+}
+
+header p {
+  color:#b9ad9d;
+  font-size:12px;
+  margin-top:10px;
+}
+
+.wrapper {
+  width:min(1150px,94%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:360px 1fr;
+  gap:30px;
+  align-items:start;
+  padding-bottom:50px;
+}
+
+.editor {
+  background:#ffffff0a;
+  border:1px solid #ffffff18;
+  border-radius:18px;
+  padding:24px;
+}
+
+.editor h2 {
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-size:24px;
+  margin-bottom:22px;
+}
+
+.group {
+  margin-bottom:17px;
+}
+
+.group label {
+  display:block;
+  font-size:11px;
+  color:#d4c9b7;
+  margin-bottom:7px;
+}
+
+.group input,
+.group select,
+.group textarea {
+  width:100%;
+  padding:12px;
+  background:#17151c;
+  color:white;
+  border:1px solid #ffffff25;
+  border-radius:9px;
+  outline:none;
+  font-size:12px;
+}
+
+.group input:focus,
+.group select:focus,
+.group textarea:focus {
+  border-color:var(--gold);
+}
+
+.group textarea {
+  resize:vertical;
+  min-height:85px;
+}
+
+.group input[type=file] {
+  font-size:10px;
+  padding:9px;
+}
+
+.group input[type=file]::file-selector-button {
+  background:#d5ad65;
+  color:#201b12;
+  border:none;
+  padding:7px 10px;
+  border-radius:5px;
+  cursor:pointer;
+  margin-right:8px;
+}
+
+.hint {
+  font-size:10px;
+  color:#a99c89;
+  margin-top:6px;
+  line-height:1.7;
+}
+
+.btn {
+  padding:12px;
+  border-radius:9px;
+  border:none;
+  font-size:11px;
+  font-weight:600;
+}
+
+.btn-main {
+  width:100%;
+  background:linear-gradient(120deg,#b78c48,#f1d28b);
+  color:#201a11;
+}
+
+.btn-secondary {
+  background:#ffffff0a;
+  border:1px solid #d5ad6580;
+  color:var(--gold);
+}
+
+.preview {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  min-width:0;
+}
+
+.preview-title {
+  font-size:12px;
+  color:#c8bba8;
+  letter-spacing:1px;
+}
+
+.card {
+  width:min(100%,510px);
+  min-height:610px;
+  padding:15px;
+  position:relative;
+  overflow:hidden;
+  color:#49351e;
+  background:linear-gradient(140deg,#fff7e9,#e8d5b1);
+  box-shadow:0 25px 70px #0008;
+  border-radius:8px;
+  --card-bg:linear-gradient(140deg,#fff7e9,#e8d5b1);
+  --card-title:#78542c;
+  --card-text:#68553c;
+  --card-accent:#aa8247;
+}
+
+.card-inner {
+  min-height:580px;
+  height:100%;
+  border:1px solid var(--card-accent);
+  outline:1px solid #a7834844;
+  outline-offset:-7px;
+  position:relative;
+  padding:35px 25px;
+  text-align:center;
+  overflow:hidden;
+  background:var(--card-bg);
+}
+
+.card::before,
+.card::after {
+  content:"✦";
+  position:absolute;
+  z-index:2;
+  color:var(--card-accent);
+  font-size:23px;
+}
+
+.card::before {
+  top:22px;
+  left:23px;
+}
+
+.card::after {
+  bottom:22px;
+  right:23px;
+}
+
+.card-label {
+  font-size:9px;
+  letter-spacing:4px;
+  color:var(--card-accent);
+  margin-top:12px;
+}
+
+.flower {
+  font-size:67px;
+  margin:19px 0;
+  display:inline-block;
+  animation:bloom 3s infinite ease-in-out;
+}
+
+@keyframes bloom {
+  0%,100% {transform:scale(.95) rotate(-5deg)}
+  50% {transform:scale(1.08) rotate(5deg)}
+}
+
+.card h2 {
+  font-family:'Playfair Display',serif;
+  color:var(--card-title);
+  font-size:clamp(31px,5vw,42px);
+  line-height:1.2;
+  margin:12px 0;
+}
+
+.card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:25px;
+  color:var(--card-accent);
+  font-weight:500;
+  margin:12px 0;
+}
+
+.line {
+  width:75px;
+  height:1px;
+  background:var(--card-accent);
+  margin:18px auto;
+}
+
+.message {
+  max-width:350px;
+  margin:auto;
+  font-size:11px;
+  line-height:2;
+  color:var(--card-text);
+  white-space:pre-line;
+  overflow-wrap:anywhere;
+}
+
+.sender {
+  font-family:'Playfair Display',serif;
+  font-size:19px;
+  font-style:italic;
+  color:var(--card-accent);
+  margin-top:15px;
+  white-space:pre-line;
+  overflow-wrap:anywhere;
+}
+
+.photo-frame {
+  width:105px;
+  height:105px;
+  border:3px solid var(--card-accent);
+  border-radius:50%;
+  margin:15px auto;
+  overflow:hidden;
+  display:none;
+  background:#ffffff77;
+}
+
+.photo-frame img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.photo-frame.show {
+  display:block;
+}
+
+.bottom-label {
+  font-size:8px;
+  letter-spacing:3px;
+  color:var(--card-accent);
+  margin-top:22px;
+}
+
+.sparkle {
+  position:absolute;
+  color:var(--card-accent);
+  font-size:13px;
+  pointer-events:none;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {opacity:.15;transform:scale(.6)}
+  to {opacity:.9;transform:scale(1.3)}
+}
+
+.card.reveal .card-inner {
+  animation:reveal .9s ease;
+}
+
+@keyframes reveal {
+  from {opacity:0;transform:scale(.94);filter:blur(8px)}
+  to {opacity:1;transform:scale(1);filter:blur(0)}
+}
+
+.actions {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  width:100%;
+}
+
+.actions button {
+  padding:11px 14px;
+  font-size:10px;
+  border-radius:8px;
+}
+
+.status {
+  font-size:11px;
+  color:#d5ad65;
+  min-height:17px;
+  text-align:center;
+}
+
+footer {
+  text-align:center;
+  color:#928879;
+  font-size:10px;
+  padding:20px;
+}
+
+@media(max-width:800px) {
+  .wrapper {
+    grid-template-columns:1fr;
+    max-width:540px;
+  }
+  .editor {order:1}
+  .preview {order:2}
+}
+
+@media(max-width:430px) {
+  .card {
+    min-height:540px;
+  }
+  .card-inner {
+    min-height:510px;
+    padding:28px 17px;
+  }
+  .flower {font-size:55px}
+  .card h2 {font-size:33px}
+  .card h3 {font-size:22px}
+  .message {font-size:10px}
+}
+
+@media print {
+  @page {
+    size:A5 portrait;
+    margin:0;
+  }
+
+  body {
+    background:white!important;
+  }
+
+  body * {
+    visibility:hidden;
+  }
+
+  #card,#card * {
+    visibility:visible;
+  }
+
+  #card {
+    position:absolute;
+    left:0;
+    top:0;
+    width:148mm;
+    height:210mm;
+    min-height:210mm;
+    border-radius:0;
+    box-shadow:none;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  #card .card-inner {
+    min-height:200mm;
+  }
+
+  .sparkle {
+    display:none;
+  }
+
+.creator-footer {
+  text-align: center;
+  padding: 35px 15px 25px;
+  margin-top: 20px;
+}
+
+.footer-line {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d5ad65,
+    transparent
+  );
+  margin: 0 auto 20px;
+}
+
+.footer-title {
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: #b9ad9d;
+}
+
+.creator-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  color: #e4c27d;
+  margin: 8px 0;
+  letter-spacing: 2px;
+}
+
+.footer-desc {
+  color: #a99c89;
+  font-size: 10px;
+}
+
+.copyright {
+  color: #77716a;
+  font-size: 9px;
+  margin-top: 13px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SPECIAL EDITION • 2026</div>
+  <h1>Hadiah Untuk Guruku</h1>
+  <p>Buat kartu ucapan digital yang indah dan penuh makna.</p>
+</header>
+
+<main class="wrapper">
+
+  <section class="editor">
+
+    <h2>Personalize Your Card</h2>
+
+    <div class="group">
+      <label>Nama Guru</label>
+      <input id="teacher" type="text"
+      maxlength="45" placeholder="Contoh: Ibu Siti">
+    </div>
+
+    <div class="group">
+      <label>Nama Pengirim</label>
+      <input id="sender" type="text"
+      maxlength="45" placeholder="Contoh: Andi">
+    </div>
+
+    <div class="group">
+      <label>Pilih Desain Kartu</label>
+      <select id="theme">
+        <option value="classic">Classic Gold</option>
+        <option value="sakura">Sakura Pink</option>
+        <option value="royal">Royal Dark</option>
+        <option value="lavender">Lavender Dream</option>
+        <option value="nature">Fresh Nature</option>
+      </select>
+    </div>
+
+    <div class="group">
+      <label>Pilih Pesan Ucapan</label>
+      <select id="messageType">
+        <option value="1">Terima Kasih Guruku</option>
+        <option value="2">Menyentuh Hati</option>
+        <option value="3">Singkat dan Elegan</option>
+        <option value="4">Inspirasi Masa Depan</option>
+      </select>
+    </div>
+
+    <div class="group">
+      <label>Pesan Tambahan</label>
+      <textarea id="extra" maxlength="250"
+      placeholder="Tuliskan pesan pribadi (opsional)..."></textarea>
+    </div>
+
+    <div class="group">
+      <label>Upload Foto Guru (Opsional)</label>
+      <input id="photo" type="file" accept="image/*">
+      <p class="hint">Gunakan foto yang Anda miliki izin untuk membagikannya. Foto diproses di browser.</p>
+    </div>
+
+    <button class="btn btn-main" id="createBtn">
+      ✨ BUAT KARTU SEKARANG
+    </button>
+
+    <p class="hint" style="margin-top:15px">
+      Isi data, pilih desain, kemudian tekan tombol buat kartu.
+      Hasilnya dapat disimpan dan dibagikan.
+    </p>
+
+  </section>
+
+  <section class="preview">
+
+    <p class="preview-title">PREVIEW KARTU UCAPAN</p>
+
+    <div class="card" id="card">
+
+      <div class="card-inner" id="cardInner">
+
+        <div class="card-label">25 NOVEMBER 2026</div>
+
+        <div class="flower" id="flower">🌸</div>
+
+        <div class="photo-frame" id="photoFrame">
+          <img id="photoPreview" alt="Foto guru">
+        </div>
+
+        <div class="card-label">HAPPY TEACHER'S DAY</div>
+
+        <h2>Terima Kasih,<br>Guruku</h2>
+
+        <div class="line"></div>
+
+        <h3 id="previewTeacher">Guru Tercinta</h3>
+
+        <p class="message" id="previewMessage">
+          Terima kasih atas segala ilmu,
+          kesabaran, dan bimbingan yang
+          telah diberikan.
+        </p>
+
+        <p class="sender" id="previewSender">
+          Dengan penuh hormat
+        </p>
+
+        <div class="line"></div>
+
+        <div class="bottom-label">
+          YOUR GUIDANCE, OUR FUTURE
+        </div>
+
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-secondary btn" id="openBtn">
+        ✨ Buka Kartu
+      </button>
+
+      <button class="btn-secondary btn" id="downloadBtn">
+        📥 Download PNG
+      </button>
+
+      <button class="btn-secondary btn" id="whatsappBtn">
+        💬 WhatsApp
+      </button>
+
+      <button class="btn-secondary btn" id="printBtn">
+        🖨 Cetak / PDF
+      </button>
+    </div>
+
+    <p class="status" id="status"></p>
+
+  </section>
+
+</main>
+
+
+<footer class="creator-footer">
+  <div class="footer-line"></div>
+
+  <p class="footer-title">CREATED WITH ❤️ BY</p>
+
+  <h3 class="creator-name">Yunji_</h3>
+
+  <p class="footer-desc">
+    Digital Greeting Card | HTML • CSS • JavaScript
+  </p>
+
+  <p class="copyright">
+    © 2026 Yunji_. All Rights Reserved.
+  </p>
+</footer>
+
+
+<!-- Library untuk membuat gambar PNG -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+
+// ===================================
+// 1. DATA PESAN UCAPAN
+// ===================================
+
+const messages = {
+  1: `Terima kasih atas segala ilmu,
+kesabaran, dan bimbingan yang telah diberikan.
+
+Setiap pelajaran yang diberikan
+menjadi bekal berharga untuk masa depan.
+
+Semoga segala kebaikan Bapak/Ibu
+menjadi inspirasi sepanjang masa.`,
+
+  2: `Seorang guru bukan hanya mengajarkan
+tentang ilmu, tetapi juga tentang kehidupan.
+
+Terima kasih telah menjadi cahaya
+yang menerangi setiap langkah kami.
+
+Jasa dan kebaikan Bapak/Ibu
+akan selalu kami kenang.`,
+
+  3: `Terima kasih telah menjadi
+inspirasi dalam perjalanan kami.
+
+Ilmu dan nasihatmu akan selalu
+menjadi bagian dari masa depan kami.
+
+Selamat Hari Guru!`,
+
+  4: `Setiap ilmu yang engkau berikan
+adalah bekal untuk meraih masa depan.
+
+Terima kasih telah membimbing,
+menginspirasi, dan percaya kepada kami.
+
+Semoga selalu diberikan kesehatan
+dan kebahagiaan.`
+};
+
+
+// ===================================
+// 2. TEMA KARTU
+// ===================================
+
+const themes = {
+
+  classic: {
+    bg: "linear-gradient(140deg,#fff8eb,#e8d3ad)",
+    title: "#79562e",
+    text: "#66513a",
+    accent: "#b18a4e",
+    flower: "🌸"
+  },
+
+  sakura: {
+    bg: "linear-gradient(140deg,#fff0f4,#f5d2df)",
+    title: "#a14d70",
+    text: "#75485a",
+    accent: "#bd7391",
+    flower: "🌺"
+  },
+
+  royal: {
+    bg: "linear-gradient(140deg,#25283a,#171b2c)",
+    title: "#f3d99f",
+    text: "#e3d5b8",
+    accent: "#d8b66c",
+    flower: "🌹"
+  },
+
+  lavender: {
+    bg: "linear-gradient(140deg,#f5edff,#ded1f4)",
+    title: "#74548e",
+    text: "#655276",
+    accent: "#9a7ab4",
+    flower: "💜"
+  },
+
+  nature: {
+    bg: "linear-gradient(140deg,#eff7e9,#c9dfbd)",
+    title: "#456d43",
+    text: "#526b4c",
+    accent: "#668b56",
+    flower: "🌻"
+  }
+
+};
+
+
+// ===================================
+// 3. AMBIL ELEMEN HTML
+// ===================================
+
+const teacher = document.getElementById("teacher");
+const sender = document.getElementById("sender");
+const theme = document.getElementById("theme");
+const messageType = document.getElementById("messageType");
+const extra = document.getElementById("extra");
+const photo = document.getElementById("photo");
+
+const card = document.getElementById("card");
+const cardInner = document.getElementById("cardInner");
+
+const previewTeacher =
+document.getElementById("previewTeacher");
+
+const previewSender =
+document.getElementById("previewSender");
+
+const previewMessage =
+document.getElementById("previewMessage");
+
+const flower = document.getElementById("flower");
+const photoFrame = document.getElementById("photoFrame");
+const photoPreview = document.getElementById("photoPreview");
+const statusText = document.getElementById("status");
+
+
+// ===================================
+// 4. FUNGSI MEMBUAT KARTU
+// ===================================
+
+function generateCard() {
+
+  const teacherName = teacher.value.trim();
+  const senderName = sender.value.trim();
+
+  if (!teacherName || !senderName) {
+    alert("Silakan isi nama guru dan nama pengirim!");
+    return;
+  }
+
+  const selectedMessage = messages[messageType.value];
+  const additionalMessage = extra.value.trim();
+
+  const finalMessage = selectedMessage +
+    (additionalMessage ? "\n\n" + additionalMessage : "");
+
+  previewTeacher.textContent = teacherName;
+  previewSender.textContent =
+    "Dengan penuh hormat,\n" + senderName;
+
+  previewMessage.textContent = finalMessage;
+
+  applyTheme();
+
+  statusText.textContent = "Kartu ucapan berhasil dibuat!";
+
+  openCard();
+
+}
+
+
+// ===================================
+// 5. FUNGSI GANTI TEMA
+// ===================================
+
+function applyTheme() {
+
+  const selected = themes[theme.value];
+
+  card.style.setProperty("--card-bg", selected.bg);
+  card.style.setProperty("--card-title", selected.title);
+  card.style.setProperty("--card-text", selected.text);
+  card.style.setProperty("--card-accent", selected.accent);
+
+  flower.textContent = selected.flower;
+
+}
+
+
+// ===================================
+// 6. UPLOAD FOTO
+// ===================================
+
+photo.addEventListener("change", function() {
+
+  const file = this.files[0];
+
+  if (!file) {
+    photoFrame.classList.remove("show");
+    photoPreview.removeAttribute("src");
+    return;
+  }
+
+  if (!file.type.startsWith("image/")) {
+    alert("File harus berupa gambar!");
+    this.value = "";
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    alert("Ukuran foto maksimal 5 MB!");
+    this.value = "";
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(event) {
+    photoPreview.src = event.target.result;
+    photoFrame.classList.add("show");
+    statusText.textContent = "Foto berhasil dimuat!";
+  };
+
+  reader.readAsDataURL(file);
+
+});
+
+
+// ===================================
+// 7. ANIMASI KARTU
+// ===================================
+
+function createSparkles() {
+
+  cardInner.querySelectorAll(".sparkle")
+    .forEach(item => item.remove());
+
+  for (let i = 0; i < 20; i++) {
+
+    const sparkle = document.createElement("span");
+
+    sparkle.className = "sparkle";
+    sparkle.textContent = "✦";
+
+    sparkle.style.left = (Math.random() * 90 + 5) + "%";
+    sparkle.style.top = (Math.random() * 90 + 5) + "%";
+    sparkle.style.animationDelay = Math.random() * 2 + "s";
+
+    cardInner.appendChild(sparkle);
+
+  }
+
+}
+
+function openCard() {
+
+  card.classList.remove("reveal");
+
+  void card.offsetWidth;
+
+  card.classList.add("reveal");
+
+  createSparkles();
+
+}
+
+
+// ===================================
+// 8. DOWNLOAD KARTU PNG
+// ===================================
+
+async function downloadCard() {
+
+  if (typeof html2canvas === "undefined") {
+    alert("Library gambar belum tersedia. Periksa koneksi internet.");
+    return;
+  }
+
+  statusText.textContent = "Sedang membuat gambar PNG...";
+
+  try {
+
+    // Tunggu foto siap sebelum mengambil gambar
+    if (photoPreview.src && !photoPreview.complete) {
+      await new Promise((resolve, reject) => {
+        photoPreview.onload = resolve;
+        photoPreview.onerror = reject;
+      });
+    }
+
+    const canvas = await html2canvas(card, {
+      scale: 2,
+      backgroundColor: null,
+      useCORS: true,
+      logging: false
+    });
+
+    const link = document.createElement("a");
+
+    const name = (teacher.value.trim() || "Guru")
+      .replace(/[^a-z0-9_-]/gi, "_");
+
+    link.download = "Kartu-Hari-Guru-" + name + ".png";
+    link.href = canvas.toDataURL("image/png");
+
+    link.click();
+
+    statusText.textContent = "Kartu berhasil diunduh!";
+
+  } catch (error) {
+
+    console.error(error);
+    statusText.textContent = "Gagal membuat PNG. Silakan coba lagi.";
+    alert("Terjadi kesalahan saat membuat gambar.");
+
+  }
+
+}
+
+
+// ===================================
+// 9. BAGIKAN WHATSAPP
+// ===================================
+
+function shareWhatsApp() {
+
+  const teacherName =
+    previewTeacher.textContent;
+
+  const message =
+    previewMessage.textContent;
+
+  const senderName =
+    previewSender.textContent;
+
+  const text =
+`🌸 SELAMAT HARI GURU 🌸
+
+Untuk: ${teacherName}
+
+${message}
+
+${senderName}
+
+Terima kasih, Guruku! ❤️`;
+
+  const url =
+    "https://wa.me/?text=" + encodeURIComponent(text);
+
+  window.open(url, "_blank", "noopener");
+
+}
+
+
+// ===================================
+// 10. EVENT TOMBOL
+// ===================================
+
+document.getElementById("createBtn")
+  .addEventListener("click", generateCard);
+
+document.getElementById("openBtn")
+  .addEventListener("click", openCard);
+
+document.getElementById("downloadBtn")
+  .addEventListener("click", downloadCard);
+
+document.getElementById("whatsappBtn")
+  .addEventListener("click", shareWhatsApp);
+
+document.getElementById("printBtn")
+  .addEventListener("click", () => window.print());
+
+theme.addEventListener("change", applyTheme);
+
+
+// ===================================
+// 11. TAMPILKAN TEMA AWAL
+// ===================================
+
+applyTheme();
+createSparkles();
+
+</script>
+
+</body>
+</html>
